@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0; url=https://google.com">
+<meta charset="utf-8">
+<title>Redirecionando...</title>
 </head>
 <body>
 
 <script>
-window.location.replace("https://google.com");
+fetch('/Compre-Aqui/link.txt')
+  .then(response => response.text())
+  .then(link => {
+    window.location.replace(link.trim());
+  });
 </script>
 
 </body>
